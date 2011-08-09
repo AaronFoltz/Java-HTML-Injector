@@ -2,39 +2,8 @@ h2. Java HTML Injector
 
 Injecting HTML in a Java Servlet can be quite a pain.  With this tool, you can just write your plain HTML code from start to finish.  Once you're done, send it to this tool, and copy the result into your Java source code.
 
-It will take basic HTML code and wrap each line in "out.println();".  For example, it will change:
-<pre>
+It will take basic HTML code and wrap each line in "out.println();".  For example:
 
-<ul> 
-	<li id="active"> 
-		<a href="/index.html">Home</a> 
-	</li> 
-	<li> 
-		<a href="/resume.html">R&eacute;sum&eacute;</a> 
-	</li> 
-	<li> 
-		<a href="http://www.aaronfoltz.com/blog">Blog</a> 
-	</li> 
-	<li> 
-		<a href="http://www.aaronfoltz.com/wiki">Wiki</a> 
-	</li> 
-	<li> 
-		<a href="/list.html">IT Company List</a> 
-	</li> 
-	<li> 
-		<a href="/projects.html">Projects</a> 
-		<ul> 
-			<li><a href="#">Taskify</a></li> 
-			<li><a href="#">Spotify.fm</a></li> 
-			<li><a href="/htmlinjector.html">Java HTML Injector</a></li> 
-		</ul> 
-	</li> 
-	<li> 
-		<a href="/contact.html">Contact</a> 
-	</li> 
-</ul> 
-</pre>
-To:
 <pre>
 <code>
 out.println("<ul>");
