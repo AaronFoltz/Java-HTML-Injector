@@ -3,7 +3,7 @@ h2. Java HTML Injector
 Injecting HTML in a Java Servlet can be quite a pain.  With this tool, you can just write your plain HTML code from start to finish.  Once you're done, send it to this tool, and copy the result into your Java source code.
 
 It will take basic HTML code and wrap each line in "out.println();".  For example, it will change:
-<pre>
+<code>
 <ul> 
 	<li id="active"> 
 		<a href="/index.html">Home</a> 
@@ -32,9 +32,9 @@ It will take basic HTML code and wrap each line in "out.println();".  For exampl
 		<a href="/contact.html">Contact</a> 
 	</li> 
 </ul> 
-</pre>
+</code>
 To:
-<pre>
+<code>
 out.println("<ul>");
 out.println("<li id="active">");
 out.println("<a href="/index.html">Home</a>");
@@ -63,7 +63,7 @@ out.println("<li>");
 out.println("<a href="/contact.html">Contact</a>");
 out.println("</li>");
 out.println("</ul>");
-</pre>
+</code>
 
 h1. About me
 
