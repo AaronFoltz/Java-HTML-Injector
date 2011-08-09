@@ -8,6 +8,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * A simple servlet which takes a parameter from a POST call and wraps each line
+ * in "out.println();". This is intended to be used when you need to inject
+ * multiple HTML lines in a Java servlet source file. With this, you can just
+ * write the HTML as you want it, then send it to this servlet in order to
+ * inject it in its Java source code form.
+ * 
+ * @author Aaron Foltz
+ * 
+ */
+
 @SuppressWarnings("serial")
 public class Java_HTML_InjectorServlet extends HttpServlet {
 
@@ -16,17 +27,40 @@ public class Java_HTML_InjectorServlet extends HttpServlet {
 			throws IOException {
 
 		// Set the response type
-		resp.setContentType("text/html");
+		resp.setContentType("text/plain");
 
 		// Get the writer to write the HTML
 		PrintWriter out = resp.getWriter();
 
 		// HTML code for the presentation layer
-		out.println("<form name=\"input\" action=\"html_form_action.asp\" method=\"post\"> "
-				+
-				"HTML code to Inject: <br><br> <textarea name=\"code\" cols=\"100\" rows=\"20\">Enter your code here...</textarea>"
-				+
-				"<br><input type=\"submit\" value=\"Submit\" />" +
-				"</form>");
+		String param = req.getParameter("code");
+
+		// Split at the end of each line. This needs to go in a separate
+		// out.println
+		String[] output = param.split("\n");
+
+		// Print out writer initialization
+		out.println("PrintWriter out = resp.getWriter()");
+
+		// Iterate through each string in the split array
+		for (String line : output) {
+
+			// If the line isn't just a newline, then we need to keep it
+			if (!line.equals("\n")) {
+
+				// Trim the whitespace off the beginning and end of the line
+				line = line.trim();
+
+				// Print out the line wrapped in out.println()
+				out.println("out.println(\"" + line + "\");");
+			}
+		}
+	}
+
+	@Override
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
+
+		doGet(req, resp);
 	}
 }
