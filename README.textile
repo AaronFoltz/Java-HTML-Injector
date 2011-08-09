@@ -41,6 +41,6 @@ When coding the HTML, you do not need to worry about whitespace.  This means tha
 
 h1. About me
 
-Email me: foltz.aaron at gmail.com
+Email me: foltz.aaron at gmail.com OR aaron@aaronfoltz.com
 Follow me: "@Aaron_Foltz":http://twitter.com/Aaron_Foltz
 Visit me: "Aaron Foltz":http://www.aaronfoltz.com
