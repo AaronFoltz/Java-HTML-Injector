@@ -37,6 +37,8 @@ out.println("</ul>");
 </code>
 </pre>
 
+When coding the HTML, you do not need to worry about whitespace.  This means that if you indent your HTML naturally, you're still good.  This tool trims all leading and ending whitespace from each line.
+
 h1. About me
 
 Email me: foltz.aaron at gmail.com
