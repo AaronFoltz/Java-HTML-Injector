@@ -52,12 +52,18 @@ public class Java_HTML_InjectorServlet extends HttpServlet {
 
 			// If the line isn't just a newline/of length 0/empty, then we need
 			// to wrap it
-			if (!line.equals("\n") && !line.equals("") && (line.length() != 0)) {
+			if (!line.equals("\n") && !line.equals("") && (line.length() != 0)
+					&& !line.equals("\n ")) {
+
 				// Trim the whitespace off the beginning and end of the line
 				line = line.trim();
 
-				// Print out the line wrapped in out.println()
-				out.println("out.println(\"" + line + "\");");
+				// If trimming made the string empty, ignore it
+				if (!line.equals("")) {
+					// Print out the line wrapped in out.println()
+					out.println("out.println(\"" + line + "\");");
+				}
+
 			}
 		}
 	}
