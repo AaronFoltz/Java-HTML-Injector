@@ -1,0 +1,70 @@
+h2. Java HTML Injector
+
+Injecting HTML in a Java Servlet can be quite a pain.  With this tool, you can just write your plain HTML code from start to finish.  Once you're done, send it to this tool, and copy the result into your Java source code.
+
+It will take basic HTML code and wrap each line in "out.println();".  For example, it will change:
+
+<ul> 
+	<li id="active"> 
+		<a href="/index.html">Home</a> 
+	</li> 
+	<li> 
+		<a href="/resume.html">R&eacute;sum&eacute;</a> 
+	</li> 
+	<li> 
+		<a href="http://www.aaronfoltz.com/blog">Blog</a> 
+	</li> 
+	<li> 
+		<a href="http://www.aaronfoltz.com/wiki">Wiki</a> 
+	</li> 
+	<li> 
+		<a href="/list.html">IT Company List</a> 
+	</li> 
+	<li> 
+		<a href="/projects.html">Projects</a> 
+		<ul> 
+			<li><a href="#">Taskify</a></li> 
+			<li><a href="#">Spotify.fm</a></li> 
+			<li><a href="/htmlinjector.html">Java HTML Injector</a></li> 
+		</ul> 
+	</li> 
+	<li> 
+		<a href="/contact.html">Contact</a> 
+	</li> 
+</ul> 
+
+To:
+
+out.println("<ul>");
+out.println("<li id="active">");
+out.println("<a href="/index.html">Home</a>");
+out.println("</li>");
+out.println("<li>");
+out.println("<a href="/resume.html">R&eacute;sum&eacute;</a>");
+out.println("</li>");
+out.println("<li>");
+out.println("<a href="http://www.aaronfoltz.com/blog">Blog</a>");
+out.println("</li>");
+out.println("<li>");
+out.println("<a href="http://www.aaronfoltz.com/wiki">Wiki</a>");
+out.println("</li>");
+out.println("<li>");
+out.println("<a href="/list.html">IT Company List</a>");
+out.println("</li>");
+out.println("<li>");
+out.println("<a href="/projects.html">Projects</a>");
+out.println("<ul>");
+out.println("<li><a href="#">Taskify</a></li>");
+out.println("<li><a href="#">Spotify.fm</a></li>");
+out.println("<li><a href="/htmlinjector.html">Java HTML Injector</a></li>");
+out.println("</ul>");
+out.println("</li>");
+out.println("<li>");
+out.println("<a href="/contact.html">Contact</a>");
+out.println("</li>");
+out.println("</ul>");
+h1. About me
+
+Email me: foltz.aaron at gmail.com
+Follow me: "@Aaron_Foltz":http://twitter.com/Aaron_Foltz
+Visit me: "Aaron Foltz":http://www.aaronfoltz.com
