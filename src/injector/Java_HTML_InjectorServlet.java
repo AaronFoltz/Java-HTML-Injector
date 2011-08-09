@@ -35,6 +35,11 @@ public class Java_HTML_InjectorServlet extends HttpServlet {
 		// HTML code for the presentation layer
 		String param = req.getParameter("code");
 
+		// If there is no param, then just return;
+		if (param == null) {
+			return;
+		}
+
 		// Split at the end of each line. This needs to go in a separate
 		// out.println
 		String[] output = param.split("\n");
