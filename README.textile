@@ -4,7 +4,7 @@ Injecting HTML in a Java Servlet can be quite a pain.  With this tool, you can j
 
 It will take basic HTML code and wrap each line in "out.println();".  For example, it will change:
 <pre>
-<code>
+
 <ul> 
 	<li id="active"> 
 		<a href="/index.html">Home</a> 
@@ -33,7 +33,6 @@ It will take basic HTML code and wrap each line in "out.println();".  For exampl
 		<a href="/contact.html">Contact</a> 
 	</li> 
 </ul> 
-</code>
 </pre>
 To:
 <pre>
